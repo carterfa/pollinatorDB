@@ -1,2 +1,2 @@
 # pollinatorDB
-Collection of data for a database of resources on pollinator conservation.
+App for querying database of resources on pollinator conservation.
