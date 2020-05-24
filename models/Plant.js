@@ -24,6 +24,14 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
 
+        type: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1, 140]
+            }
+        },
+
         flower_color: {
             type: DataTypes.STRING,
             allowNull: false,

@@ -8,7 +8,7 @@ module.exports = function (sequelize, DataTypes) {
             primaryKey: true
         },
 
-        nursery: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
@@ -52,7 +52,7 @@ module.exports = function (sequelize, DataTypes) {
             foreignKey: 'nursery_id'
         });
 
-        Nursery.belongsTo(models.State, { foreignKey: 'state', as: 'abbreviation' });
+        Nursery.belongsTo(models.State, { foreignKey: 'state' });
     };
 
     return Nursery;
