@@ -1,0 +1,26 @@
+{
+    "development": {
+        "username": "app",
+        "password": null,
+        "database": "pollinator",
+        "host": "34.74.46.36",
+        "dialect": "mysql",
+        "operatorsAliases": false
+    },
+    "test": {
+        "username": "root",
+        "password": null,
+        "database": "database_test",
+        "host": "127.0.0.1",
+        "dialect": "mysql",
+        "operatorsAliases": false
+    },
+    "production": {
+        "username": "app",
+        "password": null,
+        "database": "pollinator",
+        "host": "34.74.46.36",
+        "dialect": "mysql",
+        "operatorsAliases": false
+    }
+}
