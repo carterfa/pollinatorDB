@@ -1,4 +1,5 @@
 var db = require("../models");
+const Op = require("sequelize");
 
 module.exports = function (app) {
 
@@ -15,6 +16,7 @@ module.exports = function (app) {
 
     //Pulls up result for state
     app.get("/api/states/:state", function (req, res) {
+
         db.State.findOne({
             where: {
                 id: req.params.state

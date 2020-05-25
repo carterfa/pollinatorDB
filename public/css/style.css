@@ -1,6 +1,21 @@
-h1{
+h1, #instructions{
     margin: 0 auto;
+}
+
+header{
     padding-bottom: 1em;
+    background-color: rgb(25, 85, 25);
+    color: white;
+    font-size: bold;
+    cursor: pointer;
+    text-align: center;
+}
+
+footer{
+    padding-bottom: 1em;
+    background-color: rgb(25, 85, 25);
+    color: white;
+    font-size: bold;
 }
 
 .state {fill:rgb(180, 200, 180)}  
@@ -19,7 +34,7 @@ h1{
     position: relative; 
     height: 0; 
     width: 100%; 
-    padding: 0;
+    padding: 1em;
     padding-bottom: 50%; 
    }
 
@@ -34,4 +49,29 @@ h1{
    #plant-table{
     height: 75vh;
     overflow-y: scroll;
+   }
+
+   img{
+       max-width: 50%;
+   }
+
+   footer{
+       text-align: center;
+   }
+
+   .footer-text{
+       margin: 0 auto;
+   }
+
+   .plant-row{
+       cursor: pointer;
+   }
+
+   .org{
+       text-align: center;
+   }
+
+   .org-row{
+       padding-top: 2em;
+       padding-bottom: 2em;
    }

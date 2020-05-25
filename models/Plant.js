@@ -16,6 +16,14 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
 
+        symbol: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1, 140]
+            }
+        },
+
         scientific_name: {
             type: DataTypes.STRING,
             allowNull: false,

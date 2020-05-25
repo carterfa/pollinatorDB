@@ -41,7 +41,7 @@ function fillPlantTable(plants) {
 
     for (let i = 0; i < plants.length; i++) {
         $("#plant-table-body").append(
-            `<tr class="plant-row" id="${plants[i].id}">
+            `<tr class="plant-row" id="${plants[i].symbol}">
                 <td>${plants[i].common_name}</td>
                 <td>${plants[i].scientific_name}</td>
                 <td>${plants[i].type}</td>
@@ -85,6 +85,7 @@ function fillNurseryTable(nurseries) {
             nurseryRow = `<tr class="nursery-row" id="${nurseries[i].id}">
             <td>${nurseries[i].name}</td>
             <td>${nurseries[i].city}, ${nurseries[i].state}</td>
+            <td></td>
         </tr>`
         }
         $("#nursery-table-body").append(nurseryRow);
@@ -93,9 +94,10 @@ function fillNurseryTable(nurseries) {
 }
 
 function displayStateResults(data) {
+    $("#instructions").hide();
     $(".map-container").hide();
     $(".results").empty();
-    $(".title").text(data.name);
+    $(".state-title").text(data.name);
 
     let plants = data.Plants;
 
@@ -113,8 +115,9 @@ function displayStateResults(data) {
 
 function clearResults() {
     $(".map-container").show();
+    $("#instructions").show();
     $(".results").empty();
-    $(".title").text("Pollinator DB");
+    $(".state-title").text("");
 }
 
 function getPlant(plantid) {
@@ -154,7 +157,13 @@ $(".state path").on("click", function () {
 
 });
 
-$(".title").on("click", function () {
+$(document).on("click", '.plant-row', function () {
+    let symbol = $(this).attr('id');
+    console.log(symbol);
+    window.open(`https://plants.sc.egov.usda.gov/core/profile?symbol=${symbol}`, '_blank');
+});
+
+$("header").on("click", function () {
     clearResults();
 });
 

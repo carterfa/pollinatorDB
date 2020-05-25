@@ -26,6 +26,6 @@ require("./routes/html-routes.js")(app);
 // Sync models and turn on server
 db.sequelize.sync().then(function () {
     app.listen(PORT, function () {
-        console.log("App listening on http://localhost:" + PORT);
+        //console.log("App listening on http://localhost:" + PORT);
     });
 });

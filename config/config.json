@@ -4,16 +4,14 @@
         "password": null,
         "database": "pollinator",
         "host": "34.74.46.36",
-        "dialect": "mysql",
-        "operatorsAliases": false
+        "dialect": "mysql"
     },
     "test": {
         "username": "root",
         "password": null,
         "database": "database_test",
         "host": "127.0.0.1",
-        "dialect": "mysql",
-        "operatorsAliases": false
+        "dialect": "mysql"
     },
     "production": {
         "username": "app",
@@ -21,6 +19,15 @@
         "database": "pollinator",
         "host": "34.74.46.36",
         "dialect": "mysql",
-        "operatorsAliases": false
+        "pool": {
+            "max": 5,
+            "min": 0,
+            "acquire": 30000,
+            "idle": 10000
+        },
+        "dialectOptions": {
+            "socketPath": "/cloudsql/pollinator-project:us-east1:pollinator-mysqldb"
+        },
+        "logging": false
     }
 }
