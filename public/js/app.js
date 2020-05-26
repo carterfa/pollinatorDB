@@ -1,3 +1,5 @@
+let countrySelected = "usa";
+
 function getAllPlants() {
     $.get("/api/plants", function (data) {
         console.log(data);
@@ -13,7 +15,8 @@ function getAllStates() {
 function getState(stateid) {
     $.get("/api/states/" + stateid, function (data) {
         console.log(data);
-        $(".about-btn").hide();
+        $(".btns-div").hide();
+        $(".back-btn").show();
         displayStateResults(data);
     });
 }
@@ -115,10 +118,13 @@ function displayStateResults(data) {
 }
 
 function clearResults() {
-    $(".map-container").show();
+
+    $("." + countrySelected + "-container").show();
     $("#instructions").show();
     $(".results").empty();
     $(".state-title").text("");
+    $(".back-btn").hide();
+    $(".btns-div").show();
 }
 
 function getPlant(plantid) {
@@ -163,10 +169,22 @@ $(document).on("click", '.plant-row', function () {
     window.open(`https://plants.sc.egov.usda.gov/core/profile?symbol=${symbol}`, '_blank');
 });
 
-$("header").on("click", function () {
-    // clearResults();
-    window.location.href = "/";
+$(".country-select").on("click", function () {
+    let country = $(this).attr("value");
+    if (country == "usa") {
+        $(".can-container").hide();
+        $(".usa-container").show();
+    } else if (country == "can") {
+        $(".can-container").show();
+        $(".usa-container").hide();
+    }
+
+    countrySelected = country;
 });
+
+$(".back-btn").on("click", function () {
+    clearResults();
+})
 
 $(document).ready(function () {
 
