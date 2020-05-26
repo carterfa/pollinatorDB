@@ -1,3 +1,7 @@
+body{
+    background-color: whitesmoke;
+}
+
 h1, #instructions{
     margin: 0 auto;
 }
@@ -75,3 +79,19 @@ footer{
        padding-top: 2em;
        padding-bottom: 2em;
    }
+
+.about-btn{
+    float: left;
+    margin: 1em;
+}
+
+.sources-text{
+    font-size: .8em;
+}
+
+.bee{
+    float: right;
+    margin-left:.2em;
+}
+
+    

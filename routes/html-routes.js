@@ -8,8 +8,8 @@ module.exports = function (app) {
     });
 
     //shows sources
-    app.get("/sources", function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/sources.html"));
+    app.get("/about", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/about.html"));
     });
 
     //catch all page

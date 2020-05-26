@@ -13,6 +13,7 @@ function getAllStates() {
 function getState(stateid) {
     $.get("/api/states/" + stateid, function (data) {
         console.log(data);
+        $(".about-btn").hide();
         displayStateResults(data);
     });
 }
@@ -154,7 +155,6 @@ $(".state path").on("click", function () {
     getStateId(abbrev, function (data) {
         getState(data);
     });
-
 });
 
 $(document).on("click", '.plant-row', function () {
@@ -164,7 +164,8 @@ $(document).on("click", '.plant-row', function () {
 });
 
 $("header").on("click", function () {
-    clearResults();
+    // clearResults();
+    window.location.href = "/";
 });
 
 $(document).ready(function () {
