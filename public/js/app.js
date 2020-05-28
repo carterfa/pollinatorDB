@@ -15,8 +15,9 @@ function getAllStates() {
 function getState(stateid) {
     $.get("/api/states/" + stateid, function (data) {
         console.log(data);
-        $(".btns-div").hide();
+        $(".select-div").hide();
         $(".back-btn").show();
+        $(".about-btn").hide();
         displayStateResults(data);
     });
 }
@@ -124,7 +125,8 @@ function clearResults() {
     $(".results").empty();
     $(".state-title").text("");
     $(".back-btn").hide();
-    $(".btns-div").show();
+    $(".about-btn").show();
+    $(".select-div").show();
 }
 
 function getPlant(plantid) {
